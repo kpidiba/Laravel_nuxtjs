@@ -29,8 +29,8 @@ Route::controller(AuthController::class)->group(function () {
 Route::prefix('v1')->middleware('auth:sanctum')->group(function () {
     Route::controller(TacheController::class)->group(function () {
         Route::get('/tache', 'index')->name('tache.index');
+        Route::post('/tache', 'store')->name('tache.store');
         Route::get('/tache/{tache}', 'show')->name('tache.show');
-        Route::post('/tache/store', 'store')->name('tache.store');
         Route::put('/tache/{tache}', 'update')->name('tache.update');
         Route::delete('/tache/{tache}', 'delete')->name('tache.delete');
     });
